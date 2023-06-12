@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "de.luaxlab.shipping.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AbstractMinecartMixin",
+    "BaseRailBlockMixin",
+    "RailStateMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,4 @@
+accessWidener v1 named
+accessible method net/minecraft/world/level/block/entity/HopperBlockEntity setCooldown (I)V
+accessible method net/minecraft/world/level/block/entity/HopperBlockEntity tryMoveItems (Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/HopperBlockEntity;Ljava/util/function/BooleanSupplier;)Z
+extendable method net/minecraft/world/entity/vehicle/AbstractMinecart getDropItem ()Lnet/minecraft/world/item/Item;

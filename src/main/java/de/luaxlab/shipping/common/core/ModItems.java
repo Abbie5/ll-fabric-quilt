@@ -17,13 +17,16 @@
  */
 package de.luaxlab.shipping.common.core;
 
-import de.luaxlab.shipping.common.energy.EnergyUtils;
+import de.luaxlab.shipping.common.entity.train.locomotive.EnergyLocomotiveEntity;
+import de.luaxlab.shipping.common.entity.train.locomotive.SteamLocomotiveEntity;
+import de.luaxlab.shipping.common.entity.train.wagon.ChestCarEntity;
+import de.luaxlab.shipping.common.entity.train.wagon.SeaterCarEntity;
 import de.luaxlab.shipping.common.entity.vessel.barge.FishingBargeEntity;
 import de.luaxlab.shipping.common.entity.vessel.barge.SeaterBargeEntity;
-import de.luaxlab.shipping.common.entity.vessel.tug.EnergyTugEntity;
 import de.luaxlab.shipping.common.entity.vessel.tug.SteamTugEntity;
 import de.luaxlab.shipping.common.entity.vessel.barge.ChestBargeEntity;
 import de.luaxlab.shipping.common.item.SpringItem;
+import de.luaxlab.shipping.common.item.TrainCarItem;
 import de.luaxlab.shipping.common.item.TugRouteItem;
 import de.luaxlab.shipping.common.item.VesselItem;
 import io.github.fabricators_of_create.porting_lib.util.RegistryObject;
@@ -31,7 +34,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import team.reborn.energy.api.EnergyStorage;
 
 public class ModItems {
 
@@ -84,8 +86,8 @@ public class ModItems {
 	public static final RegistryObject<Item> TUG_ROUTE = Registration.ITEMS.register("tug_route",
 			() -> new TugRouteItem(new Item.Properties().stacksTo(16).tab(CreativeModeTab.TAB_TRANSPORTATION)));
 
-//	public static final RegistryObject<Item> CHEST_CAR = Registration.ITEMS.register("chest_car",
-//			() -> new TrainCarItem(ChestCarEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
+	public static final RegistryObject<Item> CHEST_CAR = Registration.ITEMS.register("chest_car",
+			() -> new TrainCarItem(ChestCarEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
 
 //	public static final RegistryObject<Item> FLUID_CAR = Registration.ITEMS.register("fluid_car",
 //			() -> new TrainCarItem(FluidTankCarEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
@@ -93,14 +95,14 @@ public class ModItems {
 //    public static final RegistryObject<Item> CHUNK_LOADER_CAR = Registration.ITEMS.register("chunk_loader_car",
 //            () -> new TrainCarItem(ChunkLoaderCarEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
 
-//	public static final RegistryObject<Item> SEATER_CAR = Registration.ITEMS.register("seater_car",
-//			() -> new TrainCarItem(SeaterCarEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
+	public static final RegistryObject<Item> SEATER_CAR = Registration.ITEMS.register("seater_car",
+			() -> new TrainCarItem(SeaterCarEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
 
-//	public static final RegistryObject<Item> STEAM_LOCOMOTIVE = Registration.ITEMS.register("steam_locomotive",
-//			() -> new TrainCarItem(SteamLocomotiveEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
+	public static final RegistryObject<Item> STEAM_LOCOMOTIVE = Registration.ITEMS.register("steam_locomotive",
+			() -> new TrainCarItem(SteamLocomotiveEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
 
-//	public static final RegistryObject<Item> ENERGY_LOCOMOTIVE = Registration.ITEMS.register("energy_locomotive",
-//			() -> new TrainCarItem(EnergyLocomotiveEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
+	public static final RegistryObject<Item> ENERGY_LOCOMOTIVE = Registration.ITEMS.register("energy_locomotive",
+			() -> new TrainCarItem(EnergyLocomotiveEntity::new, new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));
 
 	public static final RegistryObject<Item> RECEIVER_COMPONENT = Registration.ITEMS.register("receiver_component",
 			() -> new Item(new Item.Properties().stacksTo(64).tab(CreativeModeTab.TAB_TRANSPORTATION)));

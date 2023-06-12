@@ -31,6 +31,7 @@ import dev.onyxstudios.cca.api.v3.component.ComponentRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentFactoryRegistry;
 import dev.onyxstudios.cca.api.v3.entity.EntityComponentInitializer;
 import net.fabricmc.loader.FabricLoader;
+import org.quiltmc.loader.api.QuiltLoader;
 
 /**
  * Registers the cardinal components. Is registered in the mod.quilt.json
@@ -55,7 +56,7 @@ public class ModComponents implements EntityComponentInitializer {
 		registry.registerFor(ChestBargeEntity.class, ITEM_HANDLER, ChestBargeEntity::createItemHandlerComponent);
 		registry.registerFor(FishingBargeEntity.class, ITEM_HANDLER, FishingBargeEntity::createItemHandlerComponent);
 
-		if(FabricLoader.INSTANCE.isModLoaded(ModCommon.REBORN_ENERGY_MODID))
+		if(QuiltLoader.isModLoaded(ModCommon.REBORN_ENERGY_MODID))
 		{
 			IntegratedEnergyExtension.registerEntityComponentFactories(registry);
 		}

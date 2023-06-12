@@ -67,13 +67,13 @@ public class SteamTugEntity extends AbstractTugEntity {
         return new ItemStackHandler(1) {
             @SuppressWarnings("removal")
 			@Override
-            public boolean isItemValid(int slot, @Nonnull ItemVariant stack) {
+            public boolean isItemValid(int slot, @Nonnull ItemVariant stack, long maxAmount) {
 				return ItemContentRegistries.FUEL_TIME.get(stack.getItem()).isPresent();
             }
 
             @Override
             public long insertSlot(int slot, @Nonnull ItemVariant stack, long maxAmount, TransactionContext transaction) {
-                if (!isItemValid(slot, stack)) {
+                if (!isItemValid(slot, stack, maxAmount)) {
                     return 0;
                 }
 
@@ -197,7 +197,7 @@ public class SteamTugEntity extends AbstractTugEntity {
 
     @Override
     public void setItem(int p_70299_1_, ItemStack p_70299_2_) {
-        if (!this.itemHandler.isItemValid(p_70299_1_, ItemVariant.of(p_70299_2_))){
+        if (!this.itemHandler.isItemValid(p_70299_1_, ItemVariant.of(p_70299_2_), p_70299_2_.getCount())){
             return;
         }
         this.itemHandler.insertSlot(p_70299_1_, ItemVariant.of(p_70299_2_), 1, Transaction.openOuter());

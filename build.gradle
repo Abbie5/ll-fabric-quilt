@@ -55,8 +55,8 @@ dependencies {
 	// modImplementation libs.bundles.quilted.fabric.api // If you wish to use Fabric API's deprecated modules, you can replace the above line with this one
 
 	modImplementation include("io.github.fabricators_of_create.Porting-Lib:Porting-Lib:${porting_lib_version}+${minecraft_version}")
-//	modImplementation include("com.electronwill.night-config:core:${night_config_version}")
-//	modImplementation include("com.electronwill.night-config:toml:${night_config_version}")
+	modImplementation include("com.electronwill.night-config:core:${night_config_version}")
+	modImplementation include("com.electronwill.night-config:toml:${night_config_version}")
 //	modImplementation include("curse.maven:forge-config-api-port-fabric-547434:${forge_config_id}")
 	modImplementation include("net.minecraftforge:forgeconfigapiport-fabric:${forge_config_version}")
 
@@ -87,6 +87,8 @@ dependencies {
 	testCompileOnly "org.projectlombok:lombok:${lombok_version}"
 	testAnnotationProcessor "org.projectlombok:lombok:${lombok_version}"
 
+	// javax annotations
+	implementation "com.google.code.findbugs:jsr305:3.0.1"
 }
 
 loom {
@@ -105,6 +107,8 @@ loom {
 			runDir "build/datagen"
 		}
 	}
+
+	accessWidenerPath = file("src/main/resources/littlelogistics.accesswidener")
 }
 
 //

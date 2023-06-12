@@ -19,12 +19,15 @@ package de.luaxlab.shipping.common.core;
 
 import de.luaxlab.shipping.common.block.dock.BargeDockBlock;
 import de.luaxlab.shipping.common.block.dock.TugDockBlock;
+import de.luaxlab.shipping.common.block.rail.*;
+import de.luaxlab.shipping.common.block.rapidhopper.RapidHopperBlock;
 import de.luaxlab.shipping.common.energy.VesselChargerBlock;
 import io.github.fabricators_of_create.porting_lib.util.RegistryObject;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
 import de.luaxlab.shipping.common.block.*;
 
@@ -75,47 +78,47 @@ public class ModBlocks {
 
 
 
-//	public static final RegistryObject<Block> RAPID_HOPPER = register(
-//			"rapid_hopper",
-//			() -> new RapidHopperBlock(Block.Properties.of(Material.METAL)
-//					.destroyTime(0.5f)
-//			),
-//			CreativeModeTab.TAB_REDSTONE);
+	public static final RegistryObject<Block> RAPID_HOPPER = register(
+			"rapid_hopper",
+			() -> new RapidHopperBlock(Block.Properties.of(Material.METAL)
+					.destroyTime(0.5f)
+			),
+			CreativeModeTab.TAB_REDSTONE);
 
-//	public static final RegistryObject<Block> SWITCH_RAIL = register(
-//			"switch_rail",
-//			() -> new SwitchRail(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL), false),
-//			CreativeModeTab.TAB_TRANSPORTATION);
+	public static final RegistryObject<Block> SWITCH_RAIL = register(
+			"switch_rail",
+			() -> new SwitchRail(Block.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL), false),
+			CreativeModeTab.TAB_TRANSPORTATION);
 
-//	public static final RegistryObject<Block> AUTOMATIC_SWITCH_RAIL = register(
-//			"automatic_switch_rail",
-//			() -> new SwitchRail(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL), true),
-//			CreativeModeTab.TAB_TRANSPORTATION);
+	public static final RegistryObject<Block> AUTOMATIC_SWITCH_RAIL = register(
+			"automatic_switch_rail",
+			() -> new SwitchRail(Block.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL), true),
+			CreativeModeTab.TAB_TRANSPORTATION);
 
-//	public static final RegistryObject<Block> TEE_JUNCTION_RAIL = register(
-//			"tee_junction_rail",
-//			() -> new TeeJunctionRail(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL), false),
-//			CreativeModeTab.TAB_TRANSPORTATION);
+	public static final RegistryObject<Block> TEE_JUNCTION_RAIL = register(
+			"tee_junction_rail",
+			() -> new TeeJunctionRail(Block.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL), false),
+			CreativeModeTab.TAB_TRANSPORTATION);
 
-//	public static final RegistryObject<Block> AUTOMATIC_TEE_JUNCTION_RAIL = register(
-//			"automatic_tee_junction_rail",
-//			() -> new TeeJunctionRail(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL), true),
-//			CreativeModeTab.TAB_TRANSPORTATION);
+	public static final RegistryObject<Block> AUTOMATIC_TEE_JUNCTION_RAIL = register(
+			"automatic_tee_junction_rail",
+			() -> new TeeJunctionRail(Block.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL), true),
+			CreativeModeTab.TAB_TRANSPORTATION);
 
-//	public static final RegistryObject<Block> JUNCTION_RAIL = register(
-//			"junction_rail",
-//			() -> new JunctionRail(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL)),
-//			CreativeModeTab.TAB_TRANSPORTATION);
+	public static final RegistryObject<Block> JUNCTION_RAIL = register(
+			"junction_rail",
+			() -> new JunctionRail(Block.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL)),
+			CreativeModeTab.TAB_TRANSPORTATION);
 
-//	public static final RegistryObject<Block> CAR_DOCK_RAIL = register(
-//			"car_dock_rail",
-//			() -> new TrainCarDockingRail(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL)),
-//			CreativeModeTab.TAB_TRANSPORTATION);
+	public static final RegistryObject<Block> CAR_DOCK_RAIL = register(
+			"car_dock_rail",
+			() -> new TrainCarDockingRail(Block.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL)),
+			CreativeModeTab.TAB_TRANSPORTATION);
 
-//	public static final RegistryObject<Block> LOCOMOTIVE_DOCK_RAIL = register(
-//			"locomotive_dock_rail",
-//			() -> new LocomotiveDockingRail(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL)),
-//			CreativeModeTab.TAB_TRANSPORTATION);
+	public static final RegistryObject<Block> LOCOMOTIVE_DOCK_RAIL = register(
+			"locomotive_dock_rail",
+			() -> new LocomotiveDockingRail(Block.Properties.of(Material.DECORATION).noCollission().strength(0.7F).sound(SoundType.METAL)),
+			CreativeModeTab.TAB_TRANSPORTATION);
 
 	public static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> block){
 		return Registration.BLOCKS.register(name, block);

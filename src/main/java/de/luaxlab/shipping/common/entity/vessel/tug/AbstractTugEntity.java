@@ -153,14 +153,14 @@ public abstract class AbstractTugEntity extends VesselEntity implements Linkable
             }
 
             @Override
-            public boolean isItemValid(int slot, @Nonnull ItemVariant stack) {
+            public boolean isItemValid(int slot, @Nonnull ItemVariant stack, long amount) {
                 return stack.getItem() instanceof TugRouteItem;
             }
 
 
             @Override
             public long insertSlot(int slot, @Nonnull ItemVariant stack, long maxAmount, TransactionContext transaction) {
-                if (!isItemValid(slot, stack)) {
+                if (!isItemValid(slot, stack, maxAmount)) {
                     return 0;
                 }
 

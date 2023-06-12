@@ -69,17 +69,6 @@
 				"id": "porting_lib",
 				"versions": ">=2.1.687+1.19.2"
 			}
-		],
-		"recommends": [
-			{
-				"id": "team_reborn_energy",
-				"versions": ">=2.3.0"
-			}
-		],
-		"suggests": [
-			{
-				"id": "wthit"
-			}
 		]
 	},
 	"modmenu": {
@@ -101,5 +90,13 @@
 			"id": "littlelogistics:entities/vessel",
 			"initializer": "de.luaxlab.shipping.integration.wthit.ModExtensionWailaVessel"
 		}
-	]
+	],
+	"mixin": "littlelogistics.mixins.json",
+	"access_widener": "littlelogistics.accesswidener",
+	"quilt_loom": {
+		"injected_interfaces": {
+			"net/minecraft/class_1688": ["de/luaxlab/shipping/common/extensions/LLAbstractMinecartExtensions"],
+			"net/minecraft/class_2241": ["de/luaxlab/shipping/common/extensions/LLBaseRailBlockExtensions"]
+		}
+	}
 }

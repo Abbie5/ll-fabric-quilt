@@ -39,6 +39,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.fabricmc.loader.FabricLoader;
 import net.minecraft.client.gui.screens.MenuScreens;
 import org.quiltmc.loader.api.ModContainer;
+import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 
 public class ModClient implements ClientModInitializer {
@@ -66,7 +67,7 @@ public class ModClient implements ClientModInitializer {
 				SeaterBargeModel.TEXTURE));
 		EntityRendererRegistry.register(ModEntities.FISHING_BARGE.get(), FishingBargeRenderer::new);
 
-		if(FabricLoader.INSTANCE.isModLoaded(ModCommon.REBORN_ENERGY_MODID)) {
+		if(QuiltLoader.isModLoaded(ModCommon.REBORN_ENERGY_MODID)) {
 			EntityRendererRegistry.register(IntegratedEnergyExtension.ENERGY_TUG.get(), (ctx) -> new StaticVesselRenderer<>(ctx, EnergyTugModel::new, EnergyTugModel.LAYER_LOCATION,
 					EnergyTugModel.TEXTURE) {
 				// todo: fix in models itself

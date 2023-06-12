@@ -19,6 +19,9 @@ package de.luaxlab.shipping.common.core;
 
 import de.luaxlab.shipping.common.block.dock.BargeDockTileEntity;
 import de.luaxlab.shipping.common.block.dock.TugDockTileEntity;
+import de.luaxlab.shipping.common.block.rail.blockentity.LocomotiveDockTileEntity;
+import de.luaxlab.shipping.common.block.rail.blockentity.TrainCarDockTileEntity;
+import de.luaxlab.shipping.common.block.rapidhopper.RapidHopperTileEntity;
 import de.luaxlab.shipping.common.energy.VesselChargerTileEntity;
 import io.github.fabricators_of_create.porting_lib.util.RegistryObject;
 import net.minecraft.world.level.block.Block;
@@ -38,17 +41,17 @@ public class ModBlockEntities {
 			ModBlocks.BARGE_DOCK
 	);
 
-//	public static final RegistryObject<BlockEntityType<LocomotiveDockTileEntity>> LOCOMOTIVE_DOCK = register(
-//			"locomotive_dock",
-//			LocomotiveDockTileEntity::new,
-//			ModBlocks.LOCOMOTIVE_DOCK_RAIL
-//	);
+	public static final RegistryObject<BlockEntityType<LocomotiveDockTileEntity>> LOCOMOTIVE_DOCK = register(
+			"locomotive_dock",
+			LocomotiveDockTileEntity::new,
+			ModBlocks.LOCOMOTIVE_DOCK_RAIL
+	);
 //
-//	public static final RegistryObject<BlockEntityType<TrainCarDockTileEntity>> CAR_DOCK = register(
-//			"car_dock",
-//			TrainCarDockTileEntity::new,
-//			ModBlocks.CAR_DOCK_RAIL
-//	);
+	public static final RegistryObject<BlockEntityType<TrainCarDockTileEntity>> CAR_DOCK = register(
+			"car_dock",
+			TrainCarDockTileEntity::new,
+			ModBlocks.CAR_DOCK_RAIL
+	);
 //
 //	public static final RegistryObject<BlockEntityType<VesselDetectorTileEntity>> VESSEL_DETECTOR = register(
 //			"vessel_detector",
@@ -64,11 +67,11 @@ public class ModBlockEntities {
 //
 
 //
-//	public static final RegistryObject<BlockEntityType<RapidHopperTileEntity>> RAPID_HOPPER = register(
-//			"rapid_hopper",
-//			RapidHopperTileEntity::new,
-//			ModBlocks.RAPID_HOPPER
-//	);
+	public static final RegistryObject<BlockEntityType<RapidHopperTileEntity>> RAPID_HOPPER = register(
+			"rapid_hopper",
+			RapidHopperTileEntity::new,
+			ModBlocks.RAPID_HOPPER
+	);
 
 	public static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(
 			String name,

@@ -30,6 +30,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import org.quiltmc.loader.api.QuiltLoader;
 
 public class Registration  {
 	public static final LazyRegistrar<Block> BLOCKS = create(Registry.BLOCK);
@@ -57,7 +58,7 @@ public class Registration  {
 		VehiclePacketHandler.register();
 		ModSounds.register();
 
-		if(FabricLoader.INSTANCE.isModLoaded(ModCommon.REBORN_ENERGY_MODID))
+		if(QuiltLoader.isModLoaded(ModCommon.REBORN_ENERGY_MODID))
 		{
 			IntegratedEnergyExtension.register();
 		} else {

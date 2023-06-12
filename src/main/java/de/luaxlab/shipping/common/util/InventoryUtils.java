@@ -60,7 +60,7 @@ public class InventoryUtils {
             } else if (!airList.isEmpty() && target instanceof Entity e){
 				boolean validSlot = ModComponents.ITEM_HANDLER.maybeGet(e)
                         .map(itemHandler -> airList.stream()
-                                .map(j -> itemHandler.getHandler().isItemValid(j, ItemVariant.of(stack)))
+                                .map(j -> itemHandler.getHandler().isItemValid(j, ItemVariant.of(stack), stack.getCount()))
                                 .reduce(false, Boolean::logicalOr)).orElse(true);
                 if(validSlot) {
                     return true;

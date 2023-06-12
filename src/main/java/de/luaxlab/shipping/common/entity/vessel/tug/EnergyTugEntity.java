@@ -101,14 +101,14 @@ public class EnergyTugEntity extends AbstractTugEntity {
         return new ItemStackHandler(1) {
 
 			@Override
-			public boolean isItemValid(int slot, @Nonnull ItemVariant variant) {
+			public boolean isItemValid(int slot, @Nonnull ItemVariant variant, long maxAmount) {
 				return EnergyStorageUtil.isEnergyStorage(variant.toStack());
 			}
 
 
 			@Override
 			public long insertSlot(int slot, @Nonnull ItemVariant stack, long maxAmount, @Nullable TransactionContext transaction) {
-				if (!isItemValid(slot, stack)) {
+				if (!isItemValid(slot, stack, maxAmount)) {
 					return 0;
 				}
 
@@ -195,7 +195,7 @@ public class EnergyTugEntity extends AbstractTugEntity {
 
 	@Override
 	public void setItem(int slot, @NotNull ItemStack stack) {
-		if (!this.itemHandler.isItemValid(slot, ItemVariant.of(stack))){
+		if (!this.itemHandler.isItemValid(slot, ItemVariant.of(stack), stack.getCount())){
 			return;
 		}
 		this.itemHandler.insertSlot(slot, ItemVariant.of(stack), 1, Transaction.openOuter());
